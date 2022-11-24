@@ -1,0 +1,369 @@
+     body{
+		 margin: 0;
+		 padding:0;
+		 width:360px;
+		 height:740px;
+		 max-width: 414px;
+		 display: block;
+		 position: fixed;
+		 overflow: hidden;
+	 }
+	 
+	 #container {
+         width: 100%;
+         height: 100%;
+         
+		 padding: 0;
+         position: fixed;
+		 touch-action: manipulation;
+     }
+     canvas {
+		background: url(../img/pitch3.png) center;
+		margin: 0;
+		margin-left: 35px;
+		margin-top: 35%;
+		padding: 0;
+		z-index: 1;
+		height: auto;
+		position: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+     #introScreen {
+         z-index: 3;
+         width: 100%;
+         height: 100%;
+         background-image: url('../img/splash.png');
+         position: absolute;
+         font-family: arial;
+         color: white;
+     }
+
+#manager_name {
+border: #fff 10px;
+border-top-style: hidden;
+border-right-style: hidden;
+border-left-style: hidden;
+border-bottom-style: groove;
+width: 50%;
+margin-left: 23%;
+color: #fff;
+background: none;
+font-size: 200%;
+padding: 20px;
+text-align: center;
+}
+::placeholder {
+  color: #fff;
+  opacity: 0.8; 
+}
+	#startScreen {
+         z-index: 2;
+         width: 100%;
+         height: 100%;
+         background-image: url('../img/splash.png');
+	display: none;
+         position: absolute;
+         font-family: arial;
+         color: white;
+     }
+     #gameOverScreen {
+         z-index: -1;
+         width: 100%;
+         height: 100%;
+         background-image: url('../img/splash.png');
+         position: absolute;
+         font-family: arial;
+         color: white;
+	display: none;
+		 
+		 /* Full height */
+		 position: fixed;
+
+		 /* Center and scale the image nicely */
+		 background-position: center;
+		 background-repeat: no-repeat;
+		 background-size: cover;
+     }
+	 #gameScreen {
+         z-index: 1;
+         width: 100%;
+         height: 100%;
+	display: none;
+         background-image: url('../img/splash1.png');
+         position: absolute;
+         font-family: arial;
+         color: white;
+		 
+		 /* Full height */
+		 position: fixed;
+
+		 /* Center and scale the image nicely */
+		 background-position: center;
+		 background-repeat: no-repeat;
+		 background-size: cover;
+     }
+     #score {
+		 background: rgb(255,255,255,0.8);
+         position: fixed;
+         width: 60%;
+         height: auto;
+         font-family: arial;
+         text-align: center;
+         padding-top: 30px;
+         padding-bottom: 30px;
+         z-index: 1;
+		 margin-left:20%;
+		 margin-top:90px;
+		 font-size: 40px;
+		 color: #000;
+     }
+	 #SelectTeam1{
+		 font-size: 60px;
+		 text-align: center;
+	 }
+	 #SelectTeam2{
+		 font-size: 60px;
+		 text-align: center;
+	 }
+	 #select1, #select2{
+		 font-size: 30px;
+		 padding: 20px;
+		 text-align: center;
+	 }
+     #awayfont {
+         color: #E8E337
+     }
+     #homefont {
+         color: #4ADEDE;
+     }
+     #home,
+     #away {
+         font-size: 60px;
+         font-weight: bold;
+		 text-shadow: 3px 10px 10px #000;
+     }
+     #timer {
+         font-size: 40px;
+         font-weight: bold;
+		 background:rgb(255,255,255,0.7);
+         border-radius: 30px;
+		 position: absolute;
+		 font-family: arial;
+		 width: 50%;
+		 height:70px;
+		 margin-left:25%;
+		 text-align: center;
+		 color: #000;
+     }
+     #credits {
+         padding-top: 100px;
+         font-size: 12px;
+         font-weight: bold;
+         position: fixed;
+         height: 50px;
+         bottom: 0px;
+         left: 0px;
+         right: 0px;
+         margin-bottom: 50px;
+         margin-left: 475px;
+     }
+     a {
+         text-decoration: none;
+         color: #01BBE4;
+     }
+     #title {
+         font-size: 150px;
+         font-weight: bold;
+         font-family: Brush Script MT;
+         color: white;
+         text-align: center;
+         padding-top: 100px;
+		 margin-top: 5%;
+     }
+	 #title1 {
+         font-size: 150px;
+         font-weight: bold;
+         font-family: Brush Script MT;
+         color: white;
+         text-align: center;
+         padding-top: 100px;
+		 margin-top: 5%;
+     }
+	 #title2 {
+         font-size: 150px;
+         font-weight: bold;
+         font-family: Brush Script MT;
+         color: white;
+         text-align: center;
+         padding-top: 100px;
+		 margin-top: 5%;
+     }
+	 .btn-grad {
+       background-image: linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%);
+       margin: 10px;
+       padding: 15px 45px;
+       text-align: center;
+       text-transform: uppercase;
+       transition: 0.5s;
+       background-size: 200% auto;
+       color: white;            
+       box-shadow: 0 0 20px #eee;
+       border-radius: 10px;
+       display: block;
+     }
+
+     .btn-grad:hover {
+       background-position: right center; /* change the direction of the change here */
+       color: #fff;
+       text-decoration: none;
+     }
+		  
+     #play {
+         padding: 80px;
+         margin: 0;
+         width: 50%;
+         margin-bottom: 100px;
+		 text-shadow: 3px 10px 10px #000;
+		 border: 0;
+         font-size: 70px;
+         color: #fff;
+         font-weight: bold;
+         font-family: arial;
+         border-radius: 30px;
+         margin-top: 15%;
+         margin-left: 25%;
+     }
+	 #enter {
+         padding: 80px;
+         margin: 0;
+         width: 50%;
+         margin-bottom: 100px;
+		 text-shadow: 3px 10px 10px #000;
+		 border: 0;
+         font-size: 70px;
+         color: #fff;
+         font-weight: bold;
+         font-family: arial;
+         border-radius: 30px;
+         margin-top: 15%;
+         margin-left: 25%;
+     }
+	 #credit {
+         padding: 80px;
+         margin: 0;
+         width: 50%;
+         margin-bottom: 100px;
+		 text-shadow: 3px 10px 10px #000;
+		 border: 0;
+         font-size: 70px;
+         color: #fff;
+         font-weight: bold;
+         font-family: arial;
+         border-radius: 30px;
+         margin-top: 15%;
+         margin-left: 25%;
+     }
+	 #playagain {
+         padding: 40px;
+         margin: 0;
+         width: 50%;
+         margin-bottom: 100px;
+         border: 0;
+         font-size: 50px;
+         color: #fff;
+         font-weight: bold;
+         font-family: arial;
+         border-radius: 30px;
+         margin-top: 70%;
+         margin-left: 25%;
+     }
+	 
+	 #exit {
+         padding: 40px;
+         margin: 0;
+         width: 50%;
+         margin-bottom: 100px;
+         border: 0;
+         font-size: 50px;
+         color: #fff;
+         font-weight: bold;
+         font-family: arial;
+         border-radius: 30px;
+         margin-top: 1%;
+         margin-left: 25%;
+     }
+	 
+     #help {
+         margin-left: 25%;
+         opacity: 0.7;
+     }
+     #instructions {
+         font-size: 30px;
+         padding-left: 250px;
+         text-align: center;
+         opacity: 0.7;
+     }
+     #right {
+         padding-left: 70px;
+         font-size: 12px;
+         text-align: center;
+         opacity: 0.7;
+     }
+     #foot {
+         margin-top: 160px;
+         text-align: center;
+         font-size: 40px;
+         opacity: 0.9;
+	display: none;
+     }
+     #status {
+         font-weight: bold;
+		 text-shadow: 3px 10px 10px #000;
+         position: fixed;
+		 color: #fff;
+         width: 60%;
+         height: auto;
+		 font-size: 40px;
+         font-family: arial;
+         text-align: center;
+         padding-top: 30px;
+         padding-bottom: 30px;
+         z-index: 3;
+		 margin-left:20%;
+		 margin-top:700px;
+     }
+	 #left_button {
+		    bottom: 5%;
+			padding: 30px;
+			position: fixed;
+			left: 5%;
+			z-index: 9;
+			opacity:0.7;
+	 }
+	#down_button {
+		    bottom: 5%;
+			padding: 30px;
+			position: fixed;
+			left: 38%;
+			z-index: 9;
+			opacity:0.7;
+	 }
+	 #right_button {
+		    bottom: 5%;
+			padding: 30px;
+			position: fixed;
+			right: 5%;
+			z-index: 9;
+			opacity:0.7;
+	 }
+	 #left_button:hover{
+		 opacity:1;
+	 }
+	#down_button:hover{
+		 opacity:1;
+	 }
+	 #right_button:hover{
+		 opacity:1;
+	 }

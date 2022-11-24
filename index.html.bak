@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>Foosball V Cup</title>
+    <script src="js/SAT.js"></script>
+   	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="icon" href="img/logo.png">
+	
+</head>
+<body id ="div_register">
+<div id = "container">
+
+    <div id ="introScreen">
+        <div id="title">FoosBall V Cup</div><br><br>
+	<input type="text" name="name" id="manager_name" placeholder="Enter your name"><br>
+        <button id="enter" class='btn-grad' onclick="introdone()">Enter ▷</button>
+        <button id="credit" class='btn-grad' onclick="creditFlash()">Credits</button>
+        <div id="foot">
+		Idea & Development<br><a href="#" target="_blank">Md Asif Imrul</a><br><br><br>
+		Static Image<br><a href="#" target="_blank">Freepik.com</a><br>
+		Music & Soundtrack<br><a href="#" target="_blank">Youtube Audio Library</a>
+	</div>
+    </div>
+
+    <div id ="startScreen">
+        <div id="title1">FoosBall V Cup</div>
+		<br/><br/>
+		<p class='SelectTeam' id='SelectTeam1'> Select your Team:<br/>
+			<select id="select1">
+				<option value="2">Argentina</option>
+				<option value="0">Brazil</option>
+				<option value="1">Belgium</option> 
+				<option value="3">France</option>
+				<option value="4">England</option>
+				<option value="5">Spain</option>
+				<option value="6">Netherlands</option>
+				<option value="7">Portugal</option>
+				<option value="8">Germany</option>
+				<option value="9">India</option>
+				<option value="10">Bangladesh</option>
+			</select>
+		</p>
+		<p class='SelectTeam' id='SelectTeam2'> Select Opponent Team:<br/>
+			<select id="select2">
+				<option value="0">Brazil</option>
+				<option value="1">Belgium</option> 
+				<option value="2">Argentina</option>
+				<option value="3">France</option>
+				<option value="4">England</option>
+				<option value="5">Spain</option>
+				<option value="6">Netherlands</option>
+				<option value="7">Portugal</option>
+				<option value="8">Germany</option>
+				<option value="9">India</option>
+				<option value="10">Bangladesh</option>
+			</select>
+		</p>
+        	<button id="play" class='btn-grad' onclick="init()">PLAY ▷</button>
+        	<br>
+        	<img src="img/help.png" height="auto" width="50%" id="help">
+       	 	<br>
+        	<span id ="instructions">(Use left and right arrow keys to play)</span>
+    </div>
+
+    <div id ="gameOverScreen">
+        <div id="title2">FoosBall V Cup</div>
+        <button id="playagain" class='btn-grad' onclick="init()">PLAY AGAIN ↺</button>
+        <br>
+        <button id="exit" class='btn-grad' onclick="exit()">Exit ✂</button>
+    </div>
+	
+	<div id ="gameScreen">
+		<div id = "timer">
+			Time Left : 
+			<b id = "countdown">02:00</b>
+		</div>
+
+		<canvas id="myCanvas" width="800" height="1140"></canvas>
+		<div id="score">
+			
+			<b id = "awayfont">
+				<b style="color:#000;" id='awayTeam'></b>  
+				<b id="away">0</b>	
+			</b>
+			<b>  :  </b>
+			<b id = "homefont">
+				<b id="home">0</b>
+				<b style="color:#000;" id='homeTeam'>   </b>
+			</b>
+			<div id = "credits"> Created By <br><a href = "http://instagram.com/asifimrul" target="_blank">@Asifimrul</a></div>
+		</div>
+		
+		<img src="img/left_button.png" height="auto" width="20%" id="left_button" onclick="touchkeyDownHandler('Left')">
+		<img src="img/right_button.png" height="auto" width="20%" id="right_button" onclick="touchkeyDownHandler('Right')">
+		<img src="img/down.png" height="auto" width="20%" id="down_button" onclick="touchkeyDownHandler('Down')">
+	</div>
+    <div id = "status"></div>
+</div>
+</body>
+<script src="js/football.js"></script>
+<script>
+		if (screen.width>screen.height){
+			document.getElementById('div_register').style.width = 360+'px';
+			document.getElementById('div_register').style.height = 740+'px';
+			document.getElementById('container').style.width = 360+'px';
+			document.getElementById('container').style.height = 740+'px';
+			document.getElementById('title').style.fontSize = '350%';
+			document.getElementById('manager_name').style.fontSize = '100%';
+			document.getElementById('play').style.fontSize = '100%';
+			document.getElementById('play').style.padding = '10px';
+			document.getElementById('enter').style.fontSize = '100%';
+			document.getElementById('enter').style.padding = '10px';
+			document.getElementById('enter').style.marginBottom = '0px';
+			document.getElementById('credit').style.fontSize = '100%';
+			document.getElementById('credit').style.padding = '10px';
+			document.getElementById('credit').style.marginBottom = '0px';
+			document.getElementById('foot').style.fontSize = '70%';
+			document.getElementById('foot').style.marginTop = '70px';
+			document.getElementById('title1').style.fontSize = '350%';
+			document.getElementById('title2').style.fontSize = '350%';
+			document.getElementById("SelectTeam1").style.fontSize = '100%';
+			document.getElementById("SelectTeam2").style.fontSize = '100%';
+			document.getElementById("select2").style.fontSize = '100%';
+			document.getElementById("select1").style.fontSize = '100%';
+			document.getElementById('play').style.marginBottom = '0px';
+			document.getElementById("instructions").style.fontSize = '100%';
+			document.getElementById("instructions").style.paddingLeft = '10%';
+			
+			
+			document.getElementById('gameScreen').style.width = 360+'px';
+			document.getElementById('gameScreen').style.height = 740+'px';
+			document.getElementById('myCanvas').style.width = 310+'px';
+			document.getElementById("myCanvas").style.marginTop = '140px';
+			document.getElementById("myCanvas").style.marginLeft = '25px';
+			document.getElementById('myCanvas').style.height = 'auto';
+			document.getElementById("timer").style.fontSize = '100%';
+			document.getElementById("timer").style.height = 'auto';
+			document.getElementById("score").style.fontSize = '100%';
+			document.getElementById("score").style.marginTop = '5%';
+			document.getElementById("score").style.paddingTop = '1%';
+			document.getElementById("score").style.paddingBottom = '1%';
+			document.getElementById("score").style.position = 'absolute';
+			document.getElementById("away").style.fontSize = '100%';
+			document.getElementById("home").style.fontSize = '100%';
+			document.getElementById("left_button").style.padding = '10px';
+			document.getElementById("right_button").style.padding = '10px';
+			document.getElementById("down_button").style.padding = '10px';
+			document.getElementById("left_button").style.position = 'absolute';
+			document.getElementById("right_button").style.position = 'absolute';
+			document.getElementById("down_button").style.position = 'absolute';
+			document.getElementById("status").style.position = 'absolute';
+			document.getElementById("status").style.marginTop = '200px';
+			document.getElementById("status").style.fontSize = '100%';
+			
+			
+			document.getElementById('gameOverScreen').style.width = 360+'px';
+			document.getElementById('gameOverScreen').style.height = 740+'px';
+			document.getElementById('playagain').style.fontSize = '100%';
+			document.getElementById('playagain').style.padding = '10px';
+			document.getElementById("playagain").style.marginBottom = '10px';
+			document.getElementById('exit').style.fontSize = '100%';
+			document.getElementById('exit').style.padding = '10px';
+		}
+</script>
+</html>
